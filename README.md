@@ -52,18 +52,21 @@ e.g: http://localhost/Symfony2/web/app_dev.php/symmetry/registry/
 
 ```
 2) e.g.: http://localhost/Symfony2/web/app_dev.php/symmetry/server/supplier/ [The URI of the service.
- The symmetry remote method invocation need a valid resource in order to execute the remote calling. It is usually communicated by the service supplier.] 
+ The symmetry remote method invocation need a valid resource in order to execute the remote calling. It is
+ usually communicated by the service supplier.] 
 ```
 
 ```
 3) e.g.: AcmeBTestSupplierProxy [The remote class name of the service you need to call. The name Symmetry
- comes from the concept by having the identical class on local and remote machine. So you instance the real class from your local
- machine but execute methods on the remote machine. If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
+ comes from the concept by having the identical class on local and remote machine. So you instance the real class
+ from your local machine but execute methods on the remote machine. If the class->method you are calling not exists
+ on the remote machine you can get an REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
 ```
 
 ```
 4) e.g.: getOrderId [The remote method name of the service you need to call. The method return always a
- RemoteObject object. If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
+ RemoteObject object. If the class->method you are calling not exists on the remote machine you can get an
+ REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
 ```
 
 ```
@@ -73,7 +76,8 @@ e.g: http://localhost/Symfony2/web/app_dev.php/symmetry/registry/
 
 ```
 6) e.g.: 1 or 0 [The flag can be managed by the supplier in order to activate or inactivate the service.
- If the service you are calling is not active (0) on the remote machine you can get an REMOTE_SERVICE_INACTIVE error. You must manage the exception in your code.] 
+ If the service you are calling is not active (0) on the remote machine you can get an REMOTE_SERVICE_INACTIVE error.
+ You must manage the exception in your code.] 
 ```
 
 ```
