@@ -1,0 +1,127 @@
+{% extends 'MobileSymmetryBundle::page.html.twig' %}
+
+{% block content %} 
+
+
+<div data-role="content" style="text-align: center;">
+
+    <div class="content-primary">
+
+        <a href=""><img src='{{ asset('bundles/mobilesymmetry/images/symmetry_registry.png') }}'></a><br>
+    
+
+    
+
+<form id='edit_form' action="{{ path('symmetry_registry_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+
+        <div style="text-align: left;">Id: {{ entity.id }}</div>
+        <div style="text-align: left; font-size: 0.8em;">Id is the unique identify number of the service in your local registry  </div>
+
+         <div><hr></div>
+        
+         <div style="text-align: left;">
+                <label for="basic">Service_name:</label>            
+            {{ form_widget(edit_form.service_name) }}
+            {{ form_errors(edit_form.service_name) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: CalculateProduct [The service name is the unique name of the service used by clients to call the remote resource. 
+                You cannot change it but it is supplied from the service supplier.]
+            </div>
+
+            <div><hr></div>
+            <div style="text-align: left;">
+                <label for="basic">Resource:</label>            
+            {{ form_widget(edit_form.resource) }}
+            {{ form_errors(edit_form.resource) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: http://supplier-of-service.com/symfony2/app.php/symmetry/server/ [The URI of the service. The symmetry remote method invocation need a valid resource in order to   
+                execute the remote calling. It is usually communicated by the service supplier.]
+            </div>
+
+
+
+            <div><hr></div>
+            <div style="text-align: left;">
+                <label for="basic">Class_name:</label>            
+            {{ form_widget(edit_form.class_name) }}
+            {{ form_errors(edit_form.class_name) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: CalculatorProxy [The remote class name of the service you need to call. The name Symmetry comes from the concept by
+                having the identical class on local and remote machine. So you instance the real class from your local
+                machine but execute methods on the remote machine. If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID
+                or REMOTE_METHOD_INVALID error.]
+            </div>
+
+
+            <div><hr></div>
+            <div style="text-align: left;">
+                <label for="basic">Method_name:</label>            
+            {{ form_widget(edit_form.method_name) }}
+            {{ form_errors(edit_form.method_name) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: getProduct [The remote method name of the service you need to call. The method return always a RemoteObject object.
+                If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID
+                or REMOTE_METHOD_INVALID error.]
+            </div>
+
+
+            <div><hr></div>
+            <div style="text-align: left;">
+                <label for="basic">Description:</label>            
+            {{ form_widget(edit_form.description) }}
+            {{ form_errors(edit_form.description) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: product calculation, return float [The description of the service supplied. Usually the supplier describe all useful info about the parameters
+                needed and the type returned.]
+            </div>
+
+            <div><hr></div>
+            <div style="text-align: left;">
+                <label for="basic">Active:</label>            
+            {{ form_widget(edit_form.active) }}
+            {{ form_errors(edit_form.active) }}
+            </div>
+
+
+            <div style="text-align: left; font-size: 0.8em;">e.g.: 1 or 0 [The flag can be managed by the supplier in order to activate or inactivate the service.  If the service you are calling is not active (0) on the remote machine you can get an REMOTE_SERVICE_INACTIVE
+                error. You must manage the exception in your code.]
+            </div>
+
+
+        {{ form_rest(edit_form) }}
+
+            <div><hr></div>
+        </form>
+           <form id='delete_form' action="{{ path('symmetry_registry_delete', { 'id': entity.id }) }}" method="post">
+                        {{ form_widget(delete_form) }}                        
+                    </form>                                  
+              
+  </div>
+    
+    
+     <div class="content-secondary" data-theme="a"><br>
+        
+                        <nav>
+                              <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="b">
+                                        <li><a style='color: #000; text-decoration: none;' href="#" onclick="document.getElementById('edit_form').submit();"> Edit </a></li>
+                                        <li><a style='color: #000; text-decoration: none;' href="{{ path('symmetry_registry') }}"> Back to the list </a></li>
+                                        <li><a style='color: #000; text-decoration: none;' href="#" onclick="document.getElementById('delete_form').submit();"> Delete </a></li>
+                               </ul>
+			</nav>
+    </div>
+    
+    
+</div>        
+
+{% endblock %}
+

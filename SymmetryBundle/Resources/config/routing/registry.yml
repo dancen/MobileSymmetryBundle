@@ -1,0 +1,30 @@
+symmetry_registry:
+    pattern:  /
+    defaults: { _controller: "MobileSymmetryBundle:Registry:index" }
+
+symmetry_registry_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "MobileSymmetryBundle:Registry:show" }
+
+symmetry_registry_new:
+    pattern:  /new
+    defaults: { _controller: "MobileSymmetryBundle:Registry:new" }
+
+symmetry_registry_create:
+    pattern:  /create
+    defaults: { _controller: "MobileSymmetryBundle:Registry:create" }
+    requirements: { _method: post }
+
+symmetry_registry_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "MobileSymmetryBundle:Registry:edit" }
+
+symmetry_registry_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "MobileSymmetryBundle:Registry:update" }
+    requirements: { _method: post }
+
+symmetry_registry_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "MobileSymmetryBundle:Registry:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,51 @@
+{% extends 'MobileSymmetryBundle::page.html.twig' %}
+
+{% block content %} 
+
+
+<div data-role="content" style="text-align: center;">
+
+    <div class="content-secondary" style="font-size: 0.8em;">
+        <a href=""><img src='{{ asset('bundles/mobilesymmetry/images/symmetry_registry.png') }}'></a>
+    </div>
+
+
+
+
+    <div class="content-secondary" data-theme="a"><br>
+
+        <nav>
+            <ul data-role="listview" data-inset="true" data-theme="d" data-dividertheme="b">
+                <li><a href="{{ path('symmetry_registry_new') }}"> Create a new entry </a> </li>
+                <li><a href="{{ path('logger') }}"> See the Logger </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content-primary">
+
+
+ 
+    {% for entity in entities %}
+
+                <div data-role="collapsible" data-content-theme="c" style="font-size: 1.0em; text-align: left;">
+                    <h3>{{ entity.servicename }}</h3>
+                    <p><a href="{{ path('symmetry_registry_show', { 'id': entity.id }) }}">{{ entity.id }}</a></p>
+                    <p>Uri:<br> {{ entity.resource }}</p>
+                    <p>Class name:<br> {{ entity.classname }}</p>
+                    <p>Method name:<br> {{ entity.methodname }}</p>
+                    <p>Description:<br> {{ entity.description }}</p>
+                    <p>Active:<br> {{ entity.active }}</p>
+                    <p>Create Datetime:<br> {% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif%}</p>
+                    <p>Update Datetime:<br> {% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif%}</p>
+                    <p><a href="{{ path('symmetry_registry_show', { 'id': entity.id }) }}">show</a> &nbsp; | <a href="{{ path('symmetry_registry_edit', { 'id': entity.id }) }}">edit</a>            </p>
+                </div>
+
+    {% endfor %}
+      
+
+        </div>
+
+    </div>        
+
+{% endblock %}

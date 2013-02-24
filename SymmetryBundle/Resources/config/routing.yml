@@ -1,0 +1,34 @@
+   
+MobileSymmetryBundle_symmetryClientCustomer:
+    pattern:  /symmetry/client/customer
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryClientCustomer }
+    
+MobileSymmetryBundle_symmetrydemo:
+    pattern:  /symmetry/demo
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryDemo }    
+    
+MobileSymmetryBundle_symmetryClientSupplierToDeliveryCompany:
+    pattern:  /symmetry/client/supplier/delivery_company
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryClientSupplierToDeliveryCompany }
+    
+MobileSymmetryBundle_symmetryServerSupplier:
+    pattern:  /symmetry/server/supplier/{param}
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryServerSupplier }
+    
+MobileSymmetryBundle_symmetryServerBank:
+    pattern:  /symmetry/server/bank/{param}
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryServerBank }
+    
+MobileSymmetryBundle_symmetryServerDeliveryCompany:
+    pattern:  /symmetry/server/delivery_company/{param}
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryServerDeliveryCompany }
+    
+MobileSymmetryBundle_symmetryTest:
+    pattern:  /symmetry/test
+    defaults: { _controller: MobileSymmetryBundle:Default:symmetryTest }
+    
+MobileSymmetryBundle_registry:
+    resource: "@MobileSymmetryBundle/Resources/config/routing/registry.yml"
+    prefix:   /symmetry/registry
+    
+

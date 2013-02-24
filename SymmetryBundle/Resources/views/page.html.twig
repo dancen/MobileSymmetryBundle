@@ -1,0 +1,39 @@
+{% extends 'MobileSymmetryBundle::layout.html.twig' %}
+
+{% block header %}
+<div data-role="header" data-theme="c">
+    <h3>Registry</h3>
+                <a href="{{path("symmetry_registry")}}" data-icon="home" data-iconpos="notext" data-transition="fade">home</a>
+                <a href="{{path("symmetry_registry")}}" data-icon="info" data-iconpos="notext" data-transition="fade">info</a>
+</div><!-- /header -->
+
+{% endblock %}
+
+
+{% block content %} {% endblock %}
+
+
+{% block footer %}
+<br>
+
+<div data-role="footer" data-theme="c">
+                
+    
+                   <div data-role="navbar" data-iconpos="top">
+                        <ul>
+                            <li><a href="" data-icon="grid" data-iconpos="notext" data-transition="fade">Legend</a></li>
+                            <li><a href="javascript:void(0);" onclick="history.back(-1);" data-icon="back" data-iconpos="notext" data-transition="fade">Back</a></li>
+                        </ul>
+                    </div>
+    
+    <br>
+                          
+    
+                <p style='text-align: center; font-size: 0.8em; font-weight:200;'>Symmetry - 2012/2013<br>A Symfony 2 & jQuery Mobile project</p><br>
+                
+                              
+                   
+                
+                
+</div><!-- /footer -->
+{% endblock %}

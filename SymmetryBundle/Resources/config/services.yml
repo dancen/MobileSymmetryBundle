@@ -1,0 +1,8 @@
+parameters:
+    # ...
+    symmetry_factory.class: Mobile\SymmetryBundle\Symmetry\SymmetryFactory
+    
+services:
+    symmetry_manager:
+        class:          %symmetry_factory.class%
+        arguments:      []
