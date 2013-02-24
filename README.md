@@ -45,13 +45,24 @@ The service must be registered in the Registry repository using the registry web
 
 e.g: http://localhost/Symfony2/web/app_dev.php/symmetry/registry/
 
+```
 1) e.g.: AcmeBTestSupplier [The service name is the unique name of the service used by clients to call the remote resource. You cannot change it but it is supplied from the service supplier.] 
+```
+```
 2) e.g.: http://localhost/Symfony2/web/app_dev.php/symmetry/server/supplier/ [The URI of the service. The symmetry remote method invocation need a valid resource in order to execute the remote calling. It is usually communicated by the service supplier.] 
+```
+```
 3) e.g.: AcmeBTestSupplierProxy [The remote class name of the service you need to call. The name Symmetry comes from the concept by having the identical class on local and remote machine. So you instance the real class from your local machine but execute methods on the remote machine. If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
+```
+```
 4) e.g.: getOrderId [The remote method name of the service you need to call. The method return always a RemoteObject object. If the class->method you are calling not exists on the remote machine you can get an REMOTE_OBJECT_INVALID or REMOTE_METHOD_INVALID error.] 
+```
+```
 5) e.g.: product order id, return integer [The description of the service supplied. Usually the supplier describe all useful info about the parameters needed and the type returned.] 
+```
+```
 6) e.g.: 1 or 0 [The flag can be managed by the supplier in order to activate or inactivate the service. If the service you are calling is not active (0) on the remote machine you can get an REMOTE_SERVICE_INACTIVE error. You must manage the exception in your code.] 
-
+```
 
 to see Symmetry in action open the DefaultController
 a demo is available you can run it just setting your server path in the symmetryDemo action.
